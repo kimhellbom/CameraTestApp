@@ -1,0 +1,152 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no;" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+    <title>Camera web app test</title>
+    <link rel="stylesheet" href="css/master.css" type="text/css" media="screen" title="no title" charset="utf-8"/>
+    
+    <!--<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+    <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>-->
+    <link rel="stylesheet" href="css/themes/default/jquery.mobile-1.3.0.css" />
+    <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/jquery.mobile-1.3.0.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="cordova-1.9.0.js"></script>
+    <!--<script type="text/javascript" charset="utf-8" src="phonegap.js"></script>-->
+    
+    <script type="text/javascript" charset="utf-8" src="js/UploadPicture.js"></script>
+
+	<script type="text/javascript">
+		function onBodyLoad(){
+			document.addEventListener("deviceready",onDeviceReady,false);
+		}
+		function onDeviceReady()
+		{
+			document.getElementById("welcomeMsg").innerHTML += "Cordova is ready! version=" + window.device.cordova;
+		}
+
+		$('#linkToImages').live("tap", function() {
+            $.mobile.changePage( "#myImages", { transition: "slide"} );
+          });
+    </script>
+	</head>
+	<body onload="init();">
+    <div id="mainPage" data-role="page" data-theme="a">
+      <div data-role="header" data-position="fixed" data-theme="a">
+        <div class="ui-header ui-bar-a" role="banner">
+          <h1 class="ui-title" role="heading">Gladpoints</h1>
+        </div>
+      </div>
+      <div data-role="content" id="content">
+        <h3>Welcome to this demo of the upcoming Gladpoints Application. In this demo you can take a picture with the camera, 
+        or choose one from the library and then upload it to a web server.</h3>
+
+        <div>
+          <h3>Server URL for upload.php:</h3>
+          <input id="serverUrl" type="text" value="http://www.eiran.fi/App/upload.php" />
+        </div>
+        <br/>
+        <!-- Camera -->
+        <div>
+          <h3>Camera:</h3>
+          <b>Status:</b>
+          <span id="camera_status"></span>
+          </div>
+
+        <!-- Actions -->
+        <div>
+          <a href="#popup" data-role="button" data-rel="dialog" data-transition="fade">Take picture</a>
+        </div>
+        <br/> 
+      </div>
+      <div data-role="footer" data-position="fixed" data-id="myfooter" class="ui-footer ui-bar-a">
+        <div data-role="navbar" data-iconpos="top">
+          <ul>
+            <li>
+              <a id="linkToImages" data-transition="slide"><span class="ui-btn-text">My images</span>
+              </a>
+            </li>
+            <li>
+              <a href="#mainPage" data-transition="slide">Main</a>
+            </li>
+            <li>
+              <a href="#">Three</a>
+            </li>
+          </ul>
+        </div>
+        <!-- /navbar -->
+      </div>
+      <!-- /footer -->
+
+    </div>
+
+    <!-- Start of second page: #two -->
+    <div data-role="page" id="myImages" data-theme="b">
+
+      <div data-role="header" data-position="fixed">
+        <h1>Two</h1>
+      </div>
+      <!-- /header -->
+
+      <div data-role="content" data-theme="b">
+        <h2>My uploads</h2>
+        <!-- Server pictures -->
+        
+        <div>
+          <h3>Server:</h3>
+          <!-- Actions -->
+          <input type="button" onclick="viewUploadedPictures();" value="View Uploaded Pictures" />
+          <br />
+          <strong>Images on server:</strong>
+          <div id="server_images"></div>
+        </div>
+
+
+      </div>
+      <!-- /content -->
+
+      <div data-role="footer" data-position="fixed" data-id="myfooter" >
+        <div data-role="navbar">
+          <ul>
+            <li>
+              <a href="#myImages" data-transition="slide">
+                <span class="ui-btn-text">My images</span>
+              </a>
+            </li>
+            <li>
+              <a href="#mainPage" data-transition="slide">Main</a>
+            </li>
+            <li>
+              <a href="#">Three</a>
+            </li>
+          </ul>
+        </div>
+        <!-- /navbar -->
+      </div>
+      <!-- /footer -->
+    </div>
+    <!-- /page two -->
+
+    <!-- Start of third page: #popup -->
+    <div data-role="page" id="popup" data-theme="b">
+
+      <div data-role="header">
+        <h1>Dialog</h1>
+      </div>
+      <!-- /header -->
+
+      <div data-role="content">
+        <h2>Select your image source</h2>
+        <input type="button" onclick="takePicture();" value="Take Picture" />
+        <br/>
+        <input type="button" onclick="selectPicture();" value="Select Picture from Library" />
+        <p>
+          <a href="#one" data-rel="back" data-role="button" data-inline="true" data-icon="back" data-transition="slide">Close</a>
+        </p>
+      </div>
+      <!-- /content -->
+    </div>
+    <!-- /page popup -->
+  </body>
+</html>

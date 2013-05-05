@@ -1,0 +1,66 @@
+ body 
+  {
+    background: #000 none repeat scroll 0 0;
+    color:#ccc;
+    font-family:Helvetica, Verdana, Geneva, sans-serif;
+    margin:0;
+    border-top:1px solid #393939;
+  }
+
+  h1
+  {
+     text-align:center;
+     font-size:18px;
+     color:#FFC312; /* Mango me! */
+  }
+.loader{
+	width: 130px;
+	margin: 0 auto;
+	padding: 10px 0 10px 0;
+}
+#mainPage, #yarnsPage, #patternsPage, #aboutPage, #newsPage{
+	background: url(../images/bg.png) no-repeat;
+}
+.ui-collapsible-content{
+	background: #FFF;
+}
+.su-box-title{
+	font-size: 20px;
+	color: #FFF;
+	padding: 10px;
+	border-top: 0 !important;
+}
+.su-box{	
+	border: 0 !important;
+}
+.su-box-content{
+	border-bottom: 1px solid #000;}
+.ohje {
+
+}
+.notConnected{
+	display:none;
+}
+.logoOuter{
+	margin-top: 10%;
+}
+.logo{
+	background: url(../images/Eiranlangat_lq.jpg) no-repeat;
+	height: 114px;
+	width: 200px;
+	margin: 0 auto;	
+}
+#patternsBlock, #yarnsBlock, #newsBlock, #aboutBlock{
+	border-radius: 50px;
+	background: #D32D76;
+	min-height: 150px !important;
+	min-width: 50%;
+	text-align: center;
+	line-height: 142px;
+	color: #FFF;
+	text-shadow: none;
+	margin-bottom: 1em;
+}
+.clear{
+	clear: both;
+}
