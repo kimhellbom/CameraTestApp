@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "com.eiranlangat.Eiran-Langat"
+        id        = "com.kimhellbom.CamerWebApp"
         version   = "1.0.0">
     <name>Camera Test App</name>
 
@@ -10,16 +10,20 @@
     </description>
 
     <author href="http://www.kimhellbom.com" email="kim.hellbom@gmail.com">
-        Eiran langat
+        Kim Hellbom
     </author>
 
     <feature name="http://api.phonegap.com/1.0/device" />
+	<feature name="http://api.phonegap.com/1.0/camera"/>
+	<feature name="http://api.phonegap.com/1.0/network"/>
 
-    <preference name="phonegap-version" value="2.2.0" />
+    <preference name="phonegap-version" value="1.9.0" />
     <preference name="orientation"      value="portrait" />
     <preference name="target-device"    value="universal" />
     <preference name="fullscreen"       value="false" />
+	
 	<plugin name="NetworkStatus" value="org.apache.cordova.NetworkManager" />
+	
 
     <icon src="icon.png" />
     <icon src="icon.png"   gap:platform="android"    gap:density="ldpi" />
